@@ -1,0 +1,100 @@
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section {
+  padding: 80px 20px;
+  scroll-margin-top: 70px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Light Mode */
+.light-mode {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg: #f4f4f4;
+  --section-bg: #f4f4f4;
+  --section-alt-bg: #ffffff;
+  --primary-color: #1abc9c;
+  --primary-dark: #16a085;
+  --secondary-color: #2c3e50;
+  --secondary-dark: #1a252f;
+  --text-light: #ffffff;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f4f4f4;
+  --card-bg: #1e1e1e;
+  --section-bg: #1a1a1a;
+  --section-alt-bg: #121212;
+  --primary-color: #1abc9c;
+  --primary-dark: #16a085;
+  --secondary-color: #2c3e50;
+  --secondary-dark: #1a252f;
+  --text-light: #f4f4f4;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Global Section Styling */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  color: var(--text-color);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* Add this to ensure proper contrast */
+.contact-section {
+  background: var(--secondary-color);
+  color: var(--text-light);
+}
+
+.contact-section .section-title {
+  color: var(--text-light) !important;
+}
+
+/* This ensures form inputs have proper contrast in both themes */
+.light-mode .contact-form {
+  --input-bg: #ffffff;
+  --input-text: #333333;
+}
+
+.dark-mode .contact-form {
+  --input-bg: #2d2d2d;
+  --input-text: #f4f4f4;
+}
